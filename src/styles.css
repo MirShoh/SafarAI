@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #F5F7F5;
+  --ink: #0B2B2B;
+  --trust: #0E7C7B;
+  --deep: #0B3D5C;
+  --gold: #D79B34;
+  --warn: #C4472A;
+  --okgreen: #2E9E5B;
+  --midyellow: #D6A61A;
+  --tg-vh: 100vh;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+.font-display { font-family: 'Space Grotesk', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Telegram Mini App: respect the live viewport height and device safe areas. */
+.app-shell {
+  min-height: var(--tg-vh);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.safe-x {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+.sa-card { background: #fff; border: 1px solid #E4EAE8; border-radius: 18px; }
+.sa-btn-primary {
+  background: var(--trust); color: #fff; border: none; border-radius: 12px;
+  font-weight: 600; padding: 12px 20px; cursor: pointer; transition: .15s;
+  font-family: 'Inter', sans-serif; min-height: 44px;
+}
+.sa-btn-primary:hover { background: #0B6564; transform: translateY(-1px); }
+.sa-btn-primary:disabled { opacity: .6; cursor: default; transform: none; }
+.sa-btn-secondary {
+  background: #fff; color: var(--ink); border: 1.5px solid #D8E2DF; border-radius: 12px;
+  font-weight: 600; padding: 11px 19px; cursor: pointer; transition: .15s;
+  font-family: 'Inter', sans-serif; min-height: 44px;
+}
+.sa-btn-secondary:hover { border-color: var(--trust); color: var(--trust); }
+.sa-btn-gold { background: var(--gold); color: #fff; border: none; border-radius: 12px; font-weight: 600; padding: 12px 20px; cursor: pointer; min-height: 44px; }
+.sa-chip {
+  border: 1px solid #D8E2DF; background: #fff; border-radius: 999px; padding: 8px 14px;
+  font-size: 13px; font-weight: 600; cursor: pointer; transition: .15s; white-space: nowrap;
+  min-height: 38px; display: inline-flex; align-items: center;
+}
+.sa-chip.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.sa-scroll::-webkit-scrollbar { height: 6px; }
+.sa-scroll::-webkit-scrollbar-thumb { background: #D8E2DF; border-radius: 99px; }
+
+@keyframes sa-fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+.sa-animate { animation: sa-fade-up .5s ease both; }
+@keyframes sa-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+.sa-pulse { animation: sa-pulse 1.2s ease infinite; }
+@keyframes sa-spin { to { transform: rotate(360deg); } }
+.sa-spin { animation: sa-spin 1s linear infinite; }
+
+.sa-marker { position: absolute; transform: translate(-50%, -100%); cursor: pointer; transition: .2s; touch-action: manipulation; }
+.sa-marker:hover, .sa-marker:active { transform: translate(-50%, -108%) scale(1.08); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-animate, .sa-pulse, .sa-spin { animation: none; }
+}
