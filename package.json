@@ -12,11 +12,16 @@
   },
   "dependencies": {
     "@azure/msal-browser": "^5.18.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.462.0",
+    "openai": "^7.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "recharts": "^2.13.3"
+    "recharts": "^2.13.3",
+    "serverless-http": "^4.0.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
