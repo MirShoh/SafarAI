@@ -1,0 +1,2 @@
+# SafarAI
+Umummiliy xakaton
